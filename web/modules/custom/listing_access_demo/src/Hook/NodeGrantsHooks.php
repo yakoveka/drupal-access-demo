@@ -21,7 +21,7 @@ final class NodeGrantsHooks {
   /**
    * Bundles that only their author and staff may view.
    */
-  public const PRIVATE_BUNDLES = ['secret_note'];
+  public const PRIVATE_BUNDLES = ['secret_note', 'secret_invoice'];
 
   /**
    * The realm granting access to a node's author.

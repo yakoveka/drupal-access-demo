@@ -17,3 +17,13 @@ function listing_access_demo_post_update_rebuild_node_grants(array &$sandbox): s
   \Drupal::service(\Drupal\node\NodeAccessRebuild::class)->rebuild();
   return 'Rebuilt node access grants.';
 }
+
+/**
+ * Rebuilds node grants after secret_invoice became private.
+ *
+ * Existing nodes keep their old public grants until the rebuild runs.
+ */
+function listing_access_demo_post_update_classify_secret_invoice(array &$sandbox): string {
+  \Drupal::service(\Drupal\node\NodeAccessRebuild::class)->rebuild();
+  return 'Rebuilt node access grants after classifying secret_invoice.';
+}
