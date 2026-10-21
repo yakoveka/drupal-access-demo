@@ -21,3 +21,4 @@
 /web/sites/development.services.yml
 /web/robots.txt
 /web/update.php
+/config/sync/.htaccess
