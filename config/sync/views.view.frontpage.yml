@@ -266,7 +266,7 @@ display:
     display_plugin: feed
     position: 2
     display_options:
-      enabled: false
+      enabled: true
       pager:
         type: some
         options:
