@@ -22,3 +22,4 @@
 /web/robots.txt
 /web/update.php
 /config/sync/.htaccess
+/.phpunit.cache/
