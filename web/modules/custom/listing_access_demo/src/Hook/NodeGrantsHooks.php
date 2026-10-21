@@ -16,12 +16,12 @@ final class NodeGrantsHooks {
   /**
    * Bundles that everyone may view.
    */
-  private const PUBLIC_BUNDLES = ['article'];
+  public const PUBLIC_BUNDLES = ['article'];
 
   /**
    * Bundles that only their author and staff may view.
    */
-  private const PRIVATE_BUNDLES = ['secret_note'];
+  public const PRIVATE_BUNDLES = ['secret_note'];
 
   /**
    * The realm granting access to a node's author.
