@@ -1,0 +1,5 @@
+name: Listing access demo
+type: module
+core_version_requirement: ^11.3
+package: Custom
+description: "Demo: node access hook vs listings."
