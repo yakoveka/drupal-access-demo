@@ -45,7 +45,7 @@ if ($term === NULL) {
 
 $node_storage = \Drupal::entityTypeManager()->getStorage('node');
 $nids = [];
-foreach (['Secret note ', 'Public article '] as $prefix) {
+foreach (['Secret note ', 'Secret invoice ', 'Public article '] as $prefix) {
   $nids = array_merge($nids, $node_storage->getQuery()
     ->accessCheck(FALSE)
     ->condition('title', $prefix . '%', 'LIKE')
@@ -75,6 +75,12 @@ $nodes = [
     'title' => "Secret note C: alice's vet records",
     'uid' => (int) $users['alice']->id(),
     'body_text' => "The vet says quasar the cat is fine.",
+  ],
+  [
+    'type' => 'secret_invoice',
+    'title' => 'Secret invoice 1: alice owes 120 EUR',
+    'uid' => (int) $users['alice']->id(),
+    'body_text' => 'Alice owes 120 EUR on the quasar plan.',
   ],
   [
     'type' => 'article',

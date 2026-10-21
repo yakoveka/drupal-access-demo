@@ -44,10 +44,10 @@ check_listing() {
     code="000"
   fi
 
-  if grep -qE 'Secret note [A-Z]' "$body"; then
-    visible=$(grep -oE 'Secret note [A-Z]' "$body" | sort -u | wc -l | tr -d ' ')
+  if grep -qE 'Secret (note|invoice) [A-Z0-9]' "$body"; then
+    visible=$(grep -oE 'Secret (note|invoice) [A-Z0-9]' "$body" | sort -u | wc -l | tr -d ' ')
     LEAKS=$((LEAKS + 1))
-    RESULTS+=("LEAK|$path|($visible secret titles visible)")
+    RESULTS+=("LEAK|$path|($visible secret items visible)")
   else
     RESULTS+=("PASS|$path|($code)")
   fi

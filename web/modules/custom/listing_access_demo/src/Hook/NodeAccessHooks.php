@@ -20,7 +20,7 @@ final class NodeAccessHooks {
    */
   #[Hook('node_access')]
   public function nodeAccess(NodeInterface $node, string $operation, AccountInterface $account): AccessResultInterface {
-    if ($node->bundle() !== 'secret_note' || $operation !== 'view') {
+    if (!in_array($node->bundle(), ['secret_note', 'secret_invoice'], TRUE) || $operation !== 'view') {
       return AccessResult::neutral();
     }
     $is_author = $account->isAuthenticated() && (int) $node->getOwnerId() === (int) $account->id();
